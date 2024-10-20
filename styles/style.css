@@ -1,0 +1,294 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Big Shoulders Display';
+  font-style: normal;
+  font-weight: 500;
+  src: url('https://fonts-3by.pages.dev/big-shoulders-display-v21-latin/big-shoulders-display-v21-latin-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Lexend Deca';
+  font-style: normal;
+  font-weight: 700;
+  src: url('https://fonts-3by.pages.dev/lexend-deca-v21-latin/lexend-deca-v21-latin-700.woff2') format('woff2');
+}
+
+:root {
+  /* ## Colors */
+
+  /* ### Primary */
+
+  --light-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(179, 100%, 13%);
+  --light-cyan: hsl(184, 100%, 22%);
+
+  /* ### Neutral */
+
+  --transparent-white: hsla(0, 0%, 100%, 0.75);
+  --light-gray: hsl(0, 0%, 95%);
+
+  /* ## font family  */
+  --ff-1: 'Lexend Deca';
+  --ff-2: 'Big Shoulders Display';
+
+  /* ## font size  */
+  --fs-200:2rem;
+  --fs-100: 0.9175rem;
+
+  /* ##sapcing  */
+
+  --mar-pad-gap-100: 0.625rem;  /* 10px */
+  --mar-pad-gap-200: 1.25rem;   /* 20px */
+  --mar-pad-gap-300: 1.875rem;  /* 30px */
+  --mar-pad-gap-400: 2.5rem;    /* 40px */
+  --mar-pad-gap-500: 3.125rem;  /* 50px */
+  --mar-pad-gap-600: 3.75rem;   /* 60px */
+  --mar-pad-gap-700: 4.375rem;  /* 70px */
+  --mar-pad-gap-800: 5rem;      /* 80px */
+  --mar-pad-gap-900: 5.625rem;  /* 90px */
+  --mar-pad-gap-1000: 6.25rem;   /* 100px */
+
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  margin-block: var(--mar-pad-gap-500);
+  color: var(--light-gray); 
+}
+
+.main-component {
+  display: grid;
+  grid-template-rows: repeat(3, 400px);
+  width: 300px;
+  height: 400px;
+  margin-inline: var(--mar-pad-gap-200);
+}
+
+.card {
+  padding: var(--mar-pad-gap-400);
+  /* background-color: brown; */
+  display: flex;
+  gap: var(--mar-pad-gap-200);
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: var(--ff-1);
+  font-size: var(--fs-100);
+  /* border: 2px solid black; */
+}
+
+.card[data-card-color="orange"] {
+  background-color: var(--light-orange);
+}
+
+.card[data-card-color="dark-clay"] {
+  background-color: var(--dark-cyan);
+}
+
+.card[data-card-color="light-clay"] {
+  background-color: var(--light-cyan);
+}
+
+.card-header {
+  display: flex;
+  gap: var(--mar-pad-gap-200);
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: var(--fs-200);
+  font-family: var(--ff-2);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.description {
+  color: var(--transparent-white)
+}
+
+a {
+
+  --transparent-white: hsla(0, 0%, 100%, 0.75);
+  --light-gray: hsl(0, 0%, 95%);
+  --pad-block: 0.5rem;
+  --pad-inline: 0.8125rem;
+  --border-radius: 25px;
+  --border-size: 2px;
+  --border-style: solid;
+  --border-color: var(--light-gray);
+
+
+  display: block;
+  width: 70%;
+  background-color: var(--light-gray);
+  padding-block: var(--pad-block, 0.5rem);
+  padding-inline: var(--pad-inline, 0.8125rem);
+  text-align: center;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  border-width: var(--border-size);
+  border-style: var(--border-style);
+  border-color: var(--border-color);
+  cursor: pointer;
+}
+
+a[data-text-color="orange"] {
+  color: var(--light-orange);
+}
+
+a[data-text-color="light-clay"] {
+  color: var(--light-cyan);
+}
+
+a[data-text-color="dark-clay"] {
+  color: var(--dark-cyan);
+}
+
+a:hover,
+a:focus {
+  background-color: transparent;
+  color: var(--transparent-white);
+}
+
+a[data-text-color="orange"]:active {
+  --border-size: 2px;
+  --border-style: solid;
+  --border-color: lightgray;
+  --bg-color: lightgray;
+
+  background-color: var(--bg-color);
+  color: var(--light-orange);
+  border-width: var(--border-size);
+  border-style: var(--border-style);
+  border-color: var(--border-color);
+}
+
+a[data-text-color="light-clay"]:active {
+
+  --border-size: 2px;
+  --border-style: solid;
+  --border-color: lightgray;
+  --bg-color: lightgray;
+
+  background-color: var(--bg-color);
+  color: var(--light-cyan);
+  border-width: var(--border-size);
+  border-style: var(--border-style);
+  border-color: var(--border-color);
+}
+
+a[data-text-color="dark-clay"]:active {
+  --border-size: 2px;
+  --border-style: solid;
+  --border-color: lightgray;
+  --bg-color: lightgray;
+
+  background-color: var(--bg-color);
+  color: var(--dark-cyan);
+  border-width: var(--border-size);
+  border-style: var(--border-style);
+  border-color: var(--border-color);
+
+}
+
+@media (min-width: 40em){
+  .main-component {
+    display: grid;
+    grid-template-columns:repeat(2, 300px);
+    grid-template-rows: repeat(2, 400px);
+    place-content: center;
+    width: 300px;
+    height: 100vh;
+    margin-inline: var(--mar-pad-gap-200);
+  }
+}
+
+
+@media (min-width: 60em){
+  body{
+    height: 80vh;
+  }
+  .main-component {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    grid-template-rows: 1fr ;
+    place-content: center;
+    width: 300px;
+    height: 400px;
+    margin-inline: var(--mar-pad-gap-200);
+  }
+}
+
