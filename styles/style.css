@@ -223,45 +223,29 @@ a:focus {
   color: var(--transparent-white);
 }
 
-a[data-text-color="orange"]:active {
+a:active{
   --border-size: 2px;
   --border-style: solid;
   --border-color: lightgray;
   --bg-color: lightgray;
 
+
   background-color: var(--bg-color);
-  color: var(--light-orange);
   border-width: var(--border-size);
   border-style: var(--border-style);
   border-color: var(--border-color);
+}
+
+a[data-text-color="orange"]:active {
+  color: var(--light-orange);
 }
 
 a[data-text-color="light-clay"]:active {
-
-  --border-size: 2px;
-  --border-style: solid;
-  --border-color: lightgray;
-  --bg-color: lightgray;
-
-  background-color: var(--bg-color);
   color: var(--light-cyan);
-  border-width: var(--border-size);
-  border-style: var(--border-style);
-  border-color: var(--border-color);
 }
 
 a[data-text-color="dark-clay"]:active {
-  --border-size: 2px;
-  --border-style: solid;
-  --border-color: lightgray;
-  --bg-color: lightgray;
-
-  background-color: var(--bg-color);
   color: var(--dark-cyan);
-  border-width: var(--border-size);
-  border-style: var(--border-style);
-  border-color: var(--border-color);
-
 }
 
 @media (min-width: 40em){
